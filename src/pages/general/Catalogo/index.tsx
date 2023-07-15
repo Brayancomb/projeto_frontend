@@ -52,7 +52,7 @@ export function Catalogo() {
 
 
     const formatCurrency = (value: any) => {
-        return value.toLocaleString('pt-br', { style: 'currency', currency: 'JPY' });
+        return value.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
     };
 
     const imageBodyTemplate = (product: any) => {
@@ -99,9 +99,9 @@ export function Catalogo() {
         <div className="card">
             <DataTable value={products} header={header} footer={footer} tableStyle={{ minWidth: '60rem' }}>
                 <Column header="Status" body={statusBodyTemplate}></Column>
-                <Column field="name" header="Name"></Column>
-                <Column header="Image" body={imageBodyTemplate}></Column>
-                <Column field="price" header="Price" body={priceBodyTemplate}></Column>
+                <Column field="name" header="Nome"></Column>
+                <Column header="Foto" body={imageBodyTemplate}></Column>
+                <Column field="price" header="Preço" body={priceBodyTemplate}></Column>
                 <Column field="rating" header="Reviews" body={ratingBodyTemplate}></Column>
             </DataTable>
         </div>
