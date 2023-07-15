@@ -47,12 +47,12 @@ export function Catalogo() {
 
     useEffect(() => {
         // @ts-ignore
-        ProductService.getProductsMini().then((data) => setProducts(data));
+        ProductService.getProducts().then((data) => setProducts(data));
     }, []);
 
 
     const formatCurrency = (value: any) => {
-        return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+        return value.toLocaleString('pt-br', { style: 'currency', currency: 'JPY' });
     };
 
     const imageBodyTemplate = (product: any) => {
@@ -102,9 +102,7 @@ export function Catalogo() {
                 <Column field="name" header="Name"></Column>
                 <Column header="Image" body={imageBodyTemplate}></Column>
                 <Column field="price" header="Price" body={priceBodyTemplate}></Column>
-                <Column field="category" header="Category"></Column>
                 <Column field="rating" header="Reviews" body={ratingBodyTemplate}></Column>
-
             </DataTable>
         </div>
     );
